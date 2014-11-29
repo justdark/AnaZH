@@ -214,7 +214,8 @@ for (var i in mores)
     document.getElementById("newEle" +  ids).addEventListener('click',function () {
                                                                 var id = this.getAttribute("id").substring(6,this.getAttribute("id").length);
                                                                 var url = "http://www.zhihu.com/node/AnswerFullVoteInfoV2?params=%7B%22answer_id%22%3A%22"+ id +"%22%7D";
-
-                                                                ajaxRequest(url,id);},false); 
+																if (AnswerList[id].usercount==0)
+																	{ajaxRequest(url,id);}
+																},false); 
 
 }
