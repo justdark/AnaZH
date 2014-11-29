@@ -100,7 +100,10 @@ function parseDom(arg) {
                 var UserDOM = parseDom(content);
                 var users = getElementByClass(UserDOM,"a","zg-link-gray");
                 //alert("user's length: "+users.length)
-
+				if (users.length==0)
+				{
+					document.getElementById("newEle"+ids).innerHTML = "No Upper at all";
+				}
                 AnswerList[ids].anonymous = UserDOM.getElementsByTagName("span").length-2- users.length;
 
                 for (var i in users)
@@ -184,7 +187,7 @@ function parseDom(arg) {
 var greeting = "hola, ";
 
 var mores = document.getElementByClass("zm-votebar");
-alert(mores.length)
+//alert(mores.length)
 AnswerList = new Array();
 for (var i in mores)
 {
