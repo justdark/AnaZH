@@ -171,7 +171,7 @@ function parseDom(arg) {
                 }
 
                 //alert("hahahahaha:::  "+ids+" "+users+" "+answers+" "+posts+" "+followers);
-                document.getElementById("newEle"+ids).innerHTML = "Totally " +(AnswerList[ids].usercount+AnswerList[ids].anonymous)+" Upers,Include "+AnswerList[ids].tripleZero+" tripleZero User "+"And "+AnswerList[ids].anonymous+" anonymous Uppers"+"<br>"
+                document.getElementById("newEle"+ids).innerHTML = "Totally " +(AnswerList[ids].usercount+AnswerList[ids].anonymous)+" Uppers,Include "+AnswerList[ids].tripleZero+" tripleZero User "+"And "+AnswerList[ids].anonymous+" anonymous Uppers"+"<br>"
                                                                     +"Among all user ,three key values are " + AnswerList[ids].answers+" "+AnswerList[ids].posts+
                                                                     " "+AnswerList[ids].followers+"  "+"<br>";
             
@@ -198,6 +198,7 @@ for (var i in mores)
     s.style.backgroundColor = "#0769CD";
     s.style.color = "#FFFFFF" ;
     s.style.padding = "10px";
+	s.style.cursor = "pointer"
     var ids = mores[i].parentNode.getAttribute('data-aid');
     s.innerHTML = "To be calculated";
     s.id = "newEle" +  ids;
