@@ -172,8 +172,8 @@ function parseDom(arg) {
 
                 //alert("hahahahaha:::  "+ids+" "+users+" "+answers+" "+posts+" "+followers);
                 document.getElementById("newEle"+ids).innerHTML = "Totally " +(AnswerList[ids].usercount+AnswerList[ids].anonymous)+" Uppers,Include "+AnswerList[ids].tripleZero+" tripleZero User "+"And "+AnswerList[ids].anonymous+" anonymous Uppers"+"<br>"
-                                                                    +"Among all user ,three key values are Answers: " + AnswerList[ids].answers+"  Posts: "+AnswerList[ids].posts+
-                                                                    "  Followers: "+AnswerList[ids].followers+"  "+"<br>";
+                                                                    +"Among all user ,three key values are #Answers:" + AnswerList[ids].answers+"  #Posts:"+AnswerList[ids].posts+
+                                                                    "  #Followers:"+AnswerList[ids].followers+"  "+"<br>";
             
             }}; ;
             
