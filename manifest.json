@@ -1,15 +1,16 @@
 {  
-    "name": "AnaZH",
-    "manifest_version":2,
+  "name": "AnaZH",
+  "manifest_version":2,
   "version": "0.1",  
-  "description": "A tool to collect the answers information on zhihu.com,show the result of it",  
-   "content_scripts": [{
-       "matches": ["http://www.zhihu.com/question/*"], 
-       "js": [ "js/main.js"], 
-       "run_at": "document_end",
-       "all_frames": true 
-  }],
-    "permissions": [   
-     "tabs", "http://*/*","https://*/*"  
-    ]   
-}
+  "description": "A tool to collect the answers information on zhihu.com, show the result of it",  
+  "content_scripts": [{
+   "matches": ["http://www.zhihu.com/question/*"], 
+   "js": [ "js/main.js"], 
+   "css": ["css/main.css"],
+   "run_at": "document_end",
+   "all_frames": true 
+   }],
+   "permissions": [   
+   "tabs", "http://*/*","https://*/*"  
+   ]   
+ }
