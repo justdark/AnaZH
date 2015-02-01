@@ -6,6 +6,8 @@ function ANSWER_INFO()
     this.followers = 0;
     this.tripleZero = 0;
     this.anonymous = 0;
+    this.female = 0;
+    this.male = 0;
 }
 
 function parseDom(arg) { 
@@ -67,6 +69,8 @@ function ajaxRequestUser(ids,users)
             {
                 var content = xmlHttpRequest.responseText;
                 var newDOM = parseDom(content);
+                AnswerList[ids].male += newDOM.getElementsByClassName("icon icon-profile-male").length
+                AnswerList[ids].female += newDOM.getElementsByClassName("icon icon-profile-female").length
                 var values = newDOM.getElementsByClassName("value");
                 var answers = values[0].innerHTML;
                 var posts = values[1].innerHTML;
@@ -79,8 +83,10 @@ function ajaxRequestUser(ids,users)
                 {
                     AnswerList[ids].tripleZero+=1;
                 }
-
+                male_per = Math.floor((AnswerList[ids].male*1.0/AnswerList[ids].usercount).toFixed(2)*100);
+                female_per = Math.floor((AnswerList[ids].female*1.0/AnswerList[ids].usercount).toFixed(2)*100);
                 document.getElementById("newEle"+ids).innerHTML = "Totally " +(AnswerList[ids].usercount+AnswerList[ids].anonymous)+" voters, Include "+AnswerList[ids].tripleZero+" tripleZero voters "+"And "+AnswerList[ids].anonymous+" anonymous voters"+"<br>"
+                +"with "+ AnswerList[ids].male +"  males(" +male_per+"%)  and  "+AnswerList[ids].female + "  females(" +female_per+"%) <br>"
                 +"Among all voters, aggregate amount is #Answers: " + AnswerList[ids].answers+"  #Posts: "+AnswerList[ids].posts+
                 "  #Followers: "+AnswerList[ids].followers+"  "+"<br>";
             }
